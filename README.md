@@ -7,15 +7,13 @@ Common scripts for my projects.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+- [Install](#install)
 - [Scripts](#scripts)
-  - [iamturns-scripts-reinstall](#iamturns-scripts-reinstall)
-  - [iamturns-scripts-reset](#iamturns-scripts-reset)
-  - [iamturns-scripts-upgrade](#iamturns-scripts-upgrade)
-  - [iamturns-scripts-upgrade-latest](#iamturns-scripts-upgrade-latest)
-- [Setup](#setup)
-  - [Install](#install)
-  - [Config files](#config-files)
-  - [VS Code](#vs-code)
+  - [iamturns-scripts upgrade](#iamturns-scripts-upgrade)
+  - [iamturns-scripts upgrade-latest](#iamturns-scripts-upgrade-latest)
+  - [iamturns-scripts reinstall](#iamturns-scripts-reinstall)
+  - [iamturns-scripts reset](#iamturns-scripts-reset)
+- [Inspiration](#inspiration)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
