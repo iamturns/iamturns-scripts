@@ -4,9 +4,8 @@ const debug = require("debug")("upgrade")
 const { appDir } = require("../utils/path")
 const { rimraf } = require("../utils/fs")
 const { spawn } = require("../utils/spawn")
-const { setupProcess, isYarn } = require("../utils/app")
+const { setupProcess, isYarn, getInstallCommand } = require("../utils/app")
 const { logMessage } = require("../utils/log")
-const { getInstallCommand } = require("../utils/spawn")
 
 setupProcess()
 
