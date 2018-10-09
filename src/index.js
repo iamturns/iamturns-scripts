@@ -40,8 +40,7 @@ function launch() {
 		args: [scriptPath, ...args],
 	}
 
-	const commandResult = spawn(scriptCommand)
-	process.exit(commandResult.status)
+	spawn(scriptCommand, { exitOnComplete: true })
 }
 
 function getScriptPath(scriptName) {

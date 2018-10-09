@@ -21,5 +21,4 @@ rimraf(path.join(appDir, "node_modules"))
 
 const installCommand = getInstallCommand(isYarnResponse)
 debug("Install command: %j", installCommand)
-const commandResult = spawn(installCommand)
-process.exit(commandResult.status)
+spawn(installCommand, { exitOnComplete: true })

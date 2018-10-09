@@ -9,5 +9,4 @@ const upgradeCommand = {
 	args: ["--update", "--skip-unused"],
 }
 
-const commandResult = spawn(upgradeCommand)
-process.exit(commandResult.status)
+spawn(upgradeCommand, { exitOnComplete: true })
