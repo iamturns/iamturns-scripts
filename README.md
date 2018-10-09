@@ -10,7 +10,7 @@ Common scripts for my projects.
 - [Install](#install)
 - [Scripts](#scripts)
   - [iamturns-scripts upgrade](#iamturns-scripts-upgrade)
-  - [iamturns-scripts upgrade-latest](#iamturns-scripts-upgrade-latest)
+  - [iamturns-scripts upgrade-outdated](#iamturns-scripts-upgrade-outdated)
   - [iamturns-scripts reinstall](#iamturns-scripts-reinstall)
   - [iamturns-scripts reset](#iamturns-scripts-reset)
 - [Inspiration](#inspiration)
@@ -32,7 +32,7 @@ Update `/node_modules` and `/package-lock.json` according to semver rules define
 
 This should be safe to run (assuming all dependencies follow semver).
 
-### iamturns-scripts upgrade-latest
+### iamturns-scripts upgrade-outdated
 
 Check outdated dependencies (including versions outside semver rules defined in `/package.json`), and interactively select dependencies to update.
 

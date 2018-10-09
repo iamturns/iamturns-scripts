@@ -8,7 +8,7 @@
 	"scripts": {
 		"reinstall": "node src/index.js reinstall",
 		"upgrade": "node src/index.js upgrade",
-		"upgrade-latest": "node src/index.js upgrade-latest",
+		"upgrade-outdated": "node src/index.js upgrade-outdated",
 		"reset": "node src/index.js reset",
 		"format": "kcd-scripts format",
 		"lint": "kcd-scripts lint",
