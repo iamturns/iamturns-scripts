@@ -8,7 +8,6 @@
 	"scripts": {
 		"reinstall": "node src/index.js reinstall",
 		"upgrade": "node src/index.js upgrade",
-		"upgrade-outdated": "node src/index.js upgrade-outdated",
 		"reset": "node src/index.js reset",
 		"format": "kcd-scripts format",
 		"lint": "kcd-scripts lint",
@@ -19,7 +18,7 @@
 	},
 	"dependencies": {
 		"cross-spawn": "^6.0.5",
-		"debug": "^3.1.0",
+		"debug": "^4.1.0",
 		"npm-check": "^5.8.0",
 		"read-pkg-up": "^4.0.0",
 		"rimraf": "^2.6.2"

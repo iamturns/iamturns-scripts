@@ -10,7 +10,6 @@ Common scripts for my projects.
 - [Install](#install)
 - [Scripts](#scripts)
   - [iamturns-scripts upgrade](#iamturns-scripts-upgrade)
-  - [iamturns-scripts upgrade-outdated](#iamturns-scripts-upgrade-outdated)
   - [iamturns-scripts reinstall](#iamturns-scripts-reinstall)
   - [iamturns-scripts reset](#iamturns-scripts-reset)
 - [Inspiration](#inspiration)
@@ -28,13 +27,11 @@ npm install iamturns-scripts --save-dev
 
 ### iamturns-scripts upgrade
 
-Update `/node_modules` and `/package-lock.json` according to semver rules defined in `/package.json`.
+Update `/node_modules` and `/package-lock.json` according to semver rules defined in `/package.json` files.
 
-This should be safe to run (assuming all dependencies follow semver).
+This is a safe operation (assuming dependencies correctly follow semantic versioning).
 
-### iamturns-scripts upgrade-outdated
-
-Check outdated dependencies (including versions outside semver rules defined in `/package.json`), and interactively select dependencies to update.
+Once complete, check for outdated dependencies (outside of semver rules in `/package.json`), and interactively select dependencies to update.
 
 ### iamturns-scripts reinstall
 
