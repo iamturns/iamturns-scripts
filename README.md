@@ -12,7 +12,7 @@
 
 ## Installation
 
-This module is distributed via [npm](https://www.npmjs.com/) which is bundled with [node](https://nodejs.org).
+This module is distributed via [npm](https://www.npmjs.com/) which is bundled with [Node.js](https://nodejs.org).
 
 ```bash
 npm install iamturns-scripts --save-dev
