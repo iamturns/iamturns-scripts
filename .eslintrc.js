@@ -1,3 +1,4 @@
 module.exports = {
-	extends: ["iamturns"],
+  extends: ["iamturns"],
+  rules: {},
 }

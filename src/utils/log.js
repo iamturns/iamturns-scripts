@@ -1,14 +1,14 @@
-function logMessage(...args) {
-	// eslint-disable-next-line no-console
-	console.log(...args)
-}
+const chalk = require("chalk")
 
-function logError(...args) {
-	// eslint-disable-next-line no-console
-	console.error(...args)
-}
+const logPrefix = chalk.magenta("[iamturns-scripts]")
+const errorPrefix = chalk.red("[ERROR]")
+
+// eslint-disable-next-line no-console
+const logMessage = (...args) => console.log(logPrefix, ...args)
+
+const logError = (...args) => logMessage(errorPrefix, ...args)
 
 module.exports = {
-	logMessage,
-	logError,
+  logMessage,
+  logError,
 }

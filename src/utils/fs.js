@@ -1,11 +1,15 @@
+const fs = require("fs")
 const rimrafPackage = require("rimraf")
-const debug = require("debug")("utils:fs")
+const { debug } = require("./debug")
 
-function rimraf(path) {
-	debug("Removing: %s", path)
-	rimrafPackage.sync(path)
+const rimraf = path => {
+  debug("Removing: %s", path)
+  rimrafPackage.sync(path)
 }
 
+const isDir = path => fs.lstatSync(path).isDirectory()
+
 module.exports = {
-	rimraf,
+  rimraf,
+  isDir,
 }

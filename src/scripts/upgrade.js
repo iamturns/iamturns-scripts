@@ -1,10 +1,14 @@
+#!/usr/bin/env node
+
 const path = require("path")
-const debug = require("debug")("upgrade")
+const chalk = require("chalk")
 
 const { appDir } = require("../utils/path")
 const { rimraf } = require("../utils/fs")
 const { spawn } = require("../utils/spawn")
-const { setupProcess, isYarn, getInstallCommand } = require("../utils/app")
+const { setupProcess } = require("../utils/process")
+const { isYarn } = require("../utils/yarn")
+const { getInstallCommand } = require("../utils/install")
 const { logMessage } = require("../utils/log")
 
 setupProcess()
@@ -12,42 +16,36 @@ setupProcess()
 // Cache isYarn before removing lock files
 const isYarnResponse = isYarn()
 
+logMessage(chalk.green.bold("# Step 1 of 2"))
 logMessage(
-	`
-# Step 1
-
-Upgrading dependencies based on semver rules defined in package.json files
-This is a safe operation (assuming dependencies correctly follow semantic versioning)
-`,
+  chalk.green(
+    "Automatically upgrade dependencies based on package.json semver rules",
+  ),
 )
+logMessage(
+  chalk.green(
+    "This is a safe operation (assuming dependencies correctly follow semantic versioning)",
+  ),
+)
+logMessage("")
 
-logMessage("Removing lock file(s)")
+logMessage("Remove lock file(s)")
 rimraf(path.join(appDir, "package-lock.json"))
 rimraf(path.join(appDir, "yarn.lock"))
 
-logMessage("Removing /node_modules")
+logMessage("Remove /node_modules")
 rimraf(path.join(appDir, "node_modules"))
 
-logMessage("Reinstalling dependencies")
-const installCommand = getInstallCommand(isYarnResponse)
-debug("Install command: %j", installCommand)
-spawn(installCommand)
+logMessage("Reinstall dependencies")
+spawn(getInstallCommand(isYarnResponse))
 
+logMessage(chalk.green.bold("Step 2 of 2"))
 logMessage(
-	`
-# Step 2
-
-Checking for outdated dependencies (outside of semver rules in package.json)
-`,
+  chalk.green(
+    "Check for outdated dependencies (outside of semver rules in package.json)",
+  ),
 )
+logMessage("")
 
-spawn(
-	{
-		cmd: "npm-check",
-		args: [
-			"--update",
-			"--skip-unused", // unused module checking is unreliable
-		],
-	},
-	{ exitOnComplete: true },
-)
+// --skip-unused = unused module checking is unreliable
+spawn("npm-check --update --skip-unused", { exitOnComplete: true })

@@ -2,19 +2,12 @@
 
 Thanks for being willing to contribute!
 
-**Working on your first Pull Request?** You can learn how from this _free_ series
-[How to Contribute to an Open Source Project on GitHub][egghead]
+## Submitting Bug Reports
 
-## Setup
+Please use the [GitHub issue tracker](https://github.com/iamturns/iamturns-scripts/issues). Before creating a new issue, do a quick search to see if the problem has been reported already.
 
-Install dependencies:
+## Contributing Code
 
-```bash
-npm install
-```
+See [DEVELOPING.md](DEVELOPING.md).
 
-To make sure everything is working:
-
-```bash
-npm run validate
-```
+First time contributing code to an open source project on GitHub? Learn how with this [free video tutorial](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github).

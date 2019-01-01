@@ -1,28 +1,31 @@
-const debug = require("debug")("reset")
+#!/usr/bin/env node
 
-const { isGitClean } = require("../utils/app")
-const { logError } = require("../utils/log")
+const chalk = require("chalk")
 
+const { isGitClean } = require("../utils/git")
+const { logMessage, logError } = require("../utils/log")
+const { setupProcess } = require("../utils/process")
+const { getInstallCommand } = require("../utils/install")
 const { spawn } = require("../utils/spawn")
-const { setupProcess, getInstallCommand } = require("../utils/app")
 
 setupProcess()
 
 if (!isGitClean()) {
-	logError("Unable to run command when git repository has uncommitted changes.")
-	process.exit(1)
+  logError("Unable to run command when git repository has uncommitted changes.")
+  process.exit(1)
 }
 
-spawn({
-	cmd: "git",
-	args: ["clean", "-dfx"],
-})
+logMessage(chalk.green.bold("# Step 1 of 3"))
+logMessage(chalk.green("Clean files outside of version control"))
+logMessage("")
+spawn("git clean -dfx")
 
-spawn({
-	cmd: "git",
-	args: ["reset", "--hard"],
-})
+logMessage(chalk.green.bold("# Step 2 of 3"))
+logMessage(chalk.green("Reset to most recent git commit"))
+logMessage("")
+spawn("git reset --hard")
 
-const installCommand = getInstallCommand()
-debug("Install command: %j", installCommand)
-spawn(installCommand, { exitOnComplete: true })
+logMessage(chalk.green.bold("# Step 3 of 3"))
+logMessage(chalk.green("Reinstall"))
+logMessage("")
+spawn(getInstallCommand(), { exitOnComplete: true })

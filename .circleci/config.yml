@@ -13,4 +13,4 @@ jobs:
           command: npm run validate
       - run:
           name: release
-          command: npm run semantic-release
+          command: echo installing semantic-release && npx -p semantic-release@15 -c 'echo running semantic-release && semantic-release'
